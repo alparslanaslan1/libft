@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaslan <alaslan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alaslan <alaslan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 19:13:10 by alaslan           #+#    #+#             */
-/*   Updated: 2023/12/22 10:04:07 by alaslan          ###   ########.fr       */
+/*   Updated: 2024/08/15 07:20:04 by alaslan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,12 @@ int	ft_atoi(char *src)
 	sign = 1;
 	while (*src == ' ' || (*src >= 9 && *src <= 13))
 		src++;
-	if (*src == '-' || *src == '+')
+	if (*src == '-' || *src == '+' || *src == '\"')
+	{
+		if (*src++ == '-')
+			sign *= -1;
+	}
+	if (*src == '-' || *src == '+' || *src == '\"')
 	{
 		if (*src == '-')
 			sign *= -1;

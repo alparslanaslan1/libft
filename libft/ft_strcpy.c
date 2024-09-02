@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaslan <alaslan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alaslan <alaslan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 22:41:12 by alaslan           #+#    #+#             */
-/*   Updated: 2023/12/22 03:29:55 by alaslan          ###   ########.fr       */
+/*   Created: 2024/08/24 18:19:36 by alaslan           #+#    #+#             */
+/*   Updated: 2024/08/24 18:19:53 by alaslan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	t_list	*node;
+	char	*original_dest;
 
-	node = (t_list *)malloc(sizeof(t_list));
-	if (!node)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	original_dest = dest;
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	*dest = '\0';
+	return (original_dest);
 }

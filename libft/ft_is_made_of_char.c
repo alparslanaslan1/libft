@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_is_made_of_char.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaslan <alaslan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alaslan <alaslan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 16:39:12 by alaslan           #+#    #+#             */
-/*   Updated: 2023/12/22 10:17:41 by alaslan          ###   ########.fr       */
+/*   Created: 2024/08/15 07:18:12 by alaslan           #+#    #+#             */
+/*   Updated: 2024/08/15 07:18:14 by alaslan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_is_made_of_char(const char *str, char ch)
 {
-	size_t	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
+	if (str == NULL || *str == '\0')
+	{
+		return (1);
+	}
+	while (*str != '\0')
+	{
+		if (*str != ch)
+		{
+			return (0);
+		}
+		str++;
+	}
+	return (1);
 }

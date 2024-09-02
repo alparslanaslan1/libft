@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alaslan <alaslan@student.42.fr>            +#+  +:+       +#+         #
+#    By: alaslan <alaslan@student.42kocaeli.com.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 16:06:07 by alaslan           #+#    #+#              #
-#    Updated: 2023/12/28 11:47:49 by alaslan          ###   ########.fr        #
+#    Updated: 2024/08/24 18:22:19 by alaslan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libft.a
 CC			= 	cc
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -g
 RM			=	rm -rf
 
 SRC			=	ft_atoi.c			\
@@ -28,6 +28,7 @@ SRC			=	ft_atoi.c			\
 				ft_memcmp.c			\
 				ft_memcpy.c			\
 				ft_memmove.c		\
+				ft_strcmp.c			\
 				ft_memset.c			\
 				ft_putchar_fd.c		\
 				ft_putendl_fd.c		\
@@ -45,10 +46,14 @@ SRC			=	ft_atoi.c			\
 				ft_strncmp.c		\
 				ft_strnstr.c		\
 				ft_strrchr.c		\
+				ft_split_free.c		\
 				ft_strtrim.c		\
 				ft_substr.c			\
 				ft_tolower.c		\
-				ft_toupper.c
+				ft_toupper.c		\
+				ft_is_made_of_char.c\
+				ft_strcpy.c			\
+				ft_strncpy.c		
 
 B			=	ft_lstnew.c			\
 				ft_lstadd_front.c	\
@@ -73,7 +78,7 @@ clean:
 
 fclean: clean
 				$(RM) $(NAME)
-				
+
 re:				fclean all
 
 .PHONY:			all clean fclean re
